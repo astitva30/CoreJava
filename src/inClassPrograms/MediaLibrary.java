@@ -4,9 +4,9 @@ import java.io.File;
 
 class MediaLibrary
 {
-	static public void main(String...ar)
+	static public void main(String...ar)throws Exception
 	{
-		Player play = Manager.createRealizedPlayer(new File("C:\\java\\fur_elise.mp3").toURI().toURL());
+		Player play = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Downloads\\fur_elise.").toURI().toURL());
 
 		play.start();
 		Thread.sleep(8000);
