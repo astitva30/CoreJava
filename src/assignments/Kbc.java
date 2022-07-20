@@ -1,7 +1,9 @@
 import java.util.Date;
-import java.util.Scanner;
 import static java.lang.System.out;
 import javax.swing.JOptionPane;
+import javax.media.Player;
+import javax.media.Manager;
+import java.io.File;
 class Kbc
 {
 	static
@@ -18,19 +20,28 @@ class Kbc
 
 	static public void main(String...ar)throws Exception
 	{
-		Scanner sc = new Scanner(System.in);
+		
+		Player play1 = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Desktop\\kbcMedia\\1657865200424-voicemaker.in-speech.wav").toURI().toURL());
+		Player play2 = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Desktop\\kbcMedia\\1657865495836-voicemaker.in-speech.wav").toURI().toURL());
+		Player play3 = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Desktop\\kbcMedia\\1657865670117-voicemaker.in-speech.wav").toURI().toURL());
+		Player play4 = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Desktop\\kbcMedia\\1657872561080-voicemaker.in-speech.wav").toURI().toURL());		//correct answer
+		Player play5 = Manager.createRealizedPlayer(new File("C:\\Users\\deshp\\Desktop\\kbcMedia\\1657873128648-voicemaker.in-speech.wav").toURI().toURL());		//wrong answer
+
+		play1.start();
+		Thread.sleep(1000);
+		play1.stop();
 		String password = JOptionPane.showInputDialog("Enter password: ");
+		
 
 		if(password.equals("Abc123"))
 		{
+			play2.start();
+			play2.stop();
+			play3.start();
+			play3.stop();
 			JOptionPane.showMessageDialog(null,"Correct Password!.. you are ready to Play!!.\n--------------------WELCOME TO KAUN BANEGA CROREPATI--------------------\n->   You will be given 10 questions and each correct answer will reward you 1 Lakhs!\n->   There will be 2 LifeLines to help you out and they can be used only once!\n->   How to use LifeLines?\tType FF in choice to use 50-50\tType FQ in choice to use flip the question lifeline.\n->   Enter the correct option to submit your answer.\n");
-			/*
-			out.println("\n--------------------WELCOME TO KAUN BANEGA CROREPATI--------------------");
-			out.println("\n->   You will be given 10 questions and each correct answer will reward you 1 Lakhs!");
-			out.println("\n->   There will be 2 LifeLines to help you out and they can be used only once!");
-			out.println("\n->   How to use LifeLines?\tType FF in choice to use 50-50\tType FQ in choice to use flip the question lifeline.");
-			out.println("\n->   Enter the correct option to submit your answer.\n");
-			*/
+			
+			
 			String input = "";
 			byte FF =0;
 			byte FQ =0;
@@ -54,7 +65,10 @@ class Kbc
 
 					if(input.equals("A"))
 					{
-						JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						play4.start();
+
+						play4.stop();
 						SCORE++;
 					}
 					else if(input.equals("FF"))
@@ -66,12 +80,18 @@ class Kbc
 							
 							if(input.equals("A"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER!!");
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();
 								SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 							FF++;
 						}
@@ -81,12 +101,17 @@ class Kbc
 							input = JOptionPane.showInputDialog("Ques 1 -> What is the size of float and double in java?"+printOptions(A,B,C,D)+"\nEnter your choice: ");
 							if(input.equals("A"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer.");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 						}
 
@@ -103,7 +128,10 @@ class Kbc
 					}*/
 					else
 					{
-						JOptionPane.showMessageDialog(null,"Wrong Answer.");
+						//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+						play5.start();
+						
+						play5.stop();
 					}
 
                 case 2:
@@ -118,8 +146,10 @@ class Kbc
 
 					if(input.equals("B"))
 					{
-						JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-						SCORE++;
+						//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						play4.start();
+						
+						play4.stop();SCORE++;
 					}
 					else if(input.equals("FF"))
 					{
@@ -130,12 +160,17 @@ class Kbc
 							
 							if(input.equals("B"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER!!");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 							FF++;
 						}
@@ -145,12 +180,17 @@ class Kbc
 							input = JOptionPane.showInputDialog("Ques 2 -> Select the valid statement."+printOptions(A,B,C,D)+"\nEnter your choice: ");
 							if(input.equals("B"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer.");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 						}
 
@@ -167,7 +207,10 @@ class Kbc
 					}*/
 					else
 					{
-						JOptionPane.showMessageDialog(null,"Wrong Answer.");
+						//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 					}
 
                 case 3:
@@ -182,8 +225,10 @@ class Kbc
 
 					if(input.equals("A"))
 					{
-						JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-						SCORE++;
+						//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						play4.start();
+						
+						play4.stop();SCORE++;
 					}
 					else if(input.equals("FF"))
 					{
@@ -194,12 +239,17 @@ class Kbc
 							
 							if(input.equals("A"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER!!");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 							FF++;
 						}
@@ -209,12 +259,17 @@ class Kbc
 							input = JOptionPane.showInputDialog("Ques 3 -> In which of the following is toString() method defined?."+printOptions(A,B,C,D)+"\nEnter your choice: ");
 							if(input.equals("A"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer.");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 						}
 
@@ -231,7 +286,10 @@ class Kbc
 					}*/
 					else
 					{
-						JOptionPane.showMessageDialog(null,"Wrong Answer.");
+						//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 					}
 				
                 case 4:
@@ -246,8 +304,10 @@ class Kbc
 
 					if(input.equals("C"))
 					{
-						JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-						SCORE++;
+						//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						play4.start();
+						
+						play4.stop();SCORE++;
 					}
 					else if(input.equals("FF"))
 					{
@@ -258,12 +318,17 @@ class Kbc
 							
 							if(input.equals("C"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER!!");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 							FF++;
 						}
@@ -273,12 +338,17 @@ class Kbc
 							input = JOptionPane.showInputDialog("Ques 4 -> compareTo() returns"+printOptions(A,B,C,D)+"\nEnter your choice: ");
 							if(input.equals("C"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer.");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 						}
 
@@ -295,7 +365,10 @@ class Kbc
 					}*/
 					else
 					{
-						JOptionPane.showMessageDialog(null,"Wrong Answer.");
+						//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 					}
 				
                 case 5:
@@ -308,8 +381,10 @@ class Kbc
 
 					if(input.equals("B"))
 					{
-						JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-						SCORE++;
+						//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+						play4.start();
+						
+						play4.stop();SCORE++;
 					}
 					else if(input.equals("FF"))
 					{
@@ -320,12 +395,17 @@ class Kbc
 							
 							if(input.equals("B"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER!!");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 							FF++;
 						}
@@ -335,12 +415,17 @@ class Kbc
 							input = JOptionPane.showInputDialog("Ques 5 -> Identify the return type of a method that does not return any value."+printOptions(A,B,C,D)+"\nEnter your choice: ");
 							if(input.equals("B"))
 							{
-								JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
-								SCORE++;
+								//JOptionPane.showMessageDialog(null,"CORRECT ANSWER");
+								play4.start();
+								
+								play4.stop();SCORE++;
 							}
 							else
 							{
-								JOptionPane.showMessageDialog(null,"Wrong Answer.");
+								//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 							}
 						}
 
@@ -357,7 +442,10 @@ class Kbc
 					}*/
 					else
 					{
-						JOptionPane.showMessageDialog(null,"Wrong Answer.");
+						//JOptionPane.showMessageDialog(null,"Wrong Answer!!");
+								play5.start();
+								
+								play5.stop();
 					}
 
 
