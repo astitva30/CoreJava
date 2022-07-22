@@ -45,7 +45,7 @@ class Volumes
 					System.out.println("Enter radius and height respecively: ");
 					float radius3 = sc.nextFloat();
 					float height3 = sc.nextFloat();
-					System.out.println("Area of rectangle is : " + (22*radius3*radius3*height3)/7);
+					System.out.println("The volume of Cylender is : " + (22*radius3*radius3*height3)/7);
 					break;
 			}
 		}
